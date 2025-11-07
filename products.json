@@ -1,42 +1,98 @@
 [
   {
     "id": 1,
-    "title": "에코 머그컵",
-    "price": 9900,
-    "image": "imgs/mug.jpg",
+    "title": "트렌치코트",
+    "price": 35000,
+    "image": "/imgs/item1.jpg",
     "category": "kitchen",
-    "desc": "친환경 소재로 만든 머그컵으로 따뜻한 음료를 더욱 오래 유지합니다."
+    "desc": "간절기에 활용도 높은 베이직 아우터"
   },
   {
     "id": 2,
-    "title": "미니 선풍기",
-    "price": 14900,
-    "image": "imgs/fan.jpg",
+    "title": "가디건",
+    "price": 12000,
+    "image": "/imgs/item2.jpg",
     "category": "home",
-    "desc": "휴대용으로 어디서든 시원하게 사용할 수 있는 미니 선풍기입니다."
+    "desc": "가볍게 걸치기 좋은 데일리 아이템"
   },
   {
     "id": 3,
-    "title": "USB 케이블 C타입",
-    "price": 5900,
-    "image": "imgs/cable.jpg",
+    "title": "로퍼",
+    "price": 32500,
+    "image": "/imgs/item3.jpg",
     "category": "digital",
-    "desc": "빠른 충전과 안정적인 데이터 전송을 지원하는 고속 USB-C 케이블."
+    "desc": "깔끔한 디자인의 클래식 슈즈"
   },
   {
     "id": 4,
-    "title": "LED 탁상 스탠드",
-    "price": 19900,
-    "image": "imgs/desk-lamp-7045824_640.png",
+    "title": "우산",
+    "price": 15000,
+    "image": "/imgs/item4.jpg",
     "category": "home",
-    "desc": "눈이 편안한 조명, 밝기 조절 가능한 모던 디자인의 LED 스탠드."
+    "desc": "튼튼하고 휴대하기 편한 우산"
   },
   {
     "id": 5,
-    "title": "무선 블루투스 이어폰",
-    "price": 29900,
-    "image": "imgs/earphone.jpg",
+    "title": "장화",
+    "price": 7500,
+    "image": "/imgs/item5.jpg",
     "category": "digital",
-    "desc": "고음질 사운드와 안정적인 연결, 장시간 착용에도 편안한 무선 이어폰."
+    "desc": "비 오는 날에도 편안한 방수 슈즈"
+  },
+   {
+    "id": 6,
+    "title": "우비",
+    "price": 10000,
+    "image": "/imgs/item6.jpg",
+    "category": "digital",
+    "desc": "활동성 좋은 실용적인 레인코트"
+  },
+   {
+    "id": 7,
+    "title": "선글라스",
+    "price": 35000,
+    "image": "/imgs/item7.jpg",
+    "category": "digital",
+    "desc": "자외선 차단에 필수적인 아이웨어"
+  },
+   {
+    "id": 8,
+    "title": "머플러",
+    "price": 8500,
+    "image": "/imgs/item8.jpg",
+    "category": "digital",
+    "desc": "보온성과 스타일을 동시에 잡은 가을 아이템"
+  },
+   {
+    "id": 9,
+    "title": "앵클부츠",
+    "price": 29900,
+    "image": "/imgs/item9.jpg",
+    "category": "digital",
+    "desc": "실용성과 디자인을 모두 갖춘 슈즈"
+  },
+  {
+    "id": 10,
+    "title": "패딩",
+    "price": 37000,
+    "image": "/imgs/item10.jpg",
+    "category": "digital",
+    "desc": "추운 겨울바람을 막아줄 필수 아우터"
+  },
+  {
+    "id": 11,
+    "title": "장갑",
+    "price": 9000,
+    "image": "/imgs/item11.jpg",
+    "category": "digital",
+    "desc": "보온에 뛰어난 기본 액세서리"
+  },
+  {
+    "id": 12,
+    "title": "핫팩",
+    "price": 1000,
+    "image": "/imgs/item12.jpg",
+    "category": "digital",
+    "desc": "추운 날씨 따뜻함을 유지"
   }
 ]
