@@ -1,0 +1,12 @@
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+
+  .sb {
+    height: 100vh;
+    overflow: hidden;
+  }
+}

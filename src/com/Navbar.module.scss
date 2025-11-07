@@ -1,0 +1,59 @@
+@use "../assets/scss/var" as v;
+@use "../assets/scss/mixin" as m;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) ; // 뒷배경 채도를 증가하고,배경을 흐리게
+  width: 100%;
+  padding-right: 10px;
+
+  .logo {
+    background-image: url('/imgs/logo.PNG');
+    width: 180px;
+    height: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+  
+  }
+
+  .menuList {
+    @include m.flex-center;
+    gap: v.$gap;
+    @include m.respond(v.$bp-md) {
+      margin-right: 30px;
+    }
+
+    a {
+      position: relative;
+      padding: 6px 10px;
+      font-weight: 700;
+      color: v.$text-dark;
+      transition: all 0.3s linear;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+        transform: translateY(-1px);
+      }
+    }
+    .active {
+      color: v.$sub-color;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 1px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #333;
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@use "../assets/scss/var" as v;
+@use "../assets/scss/mixin" as m;
+@use "sass:color";
+
+.emptyCart{
+  text-align: center;
+  margin-top: 150px;
+ 
+  h1{
+    font-size: 40px;
+    animation: fadedown 1s ease-out;
+  }
+
+  h3{
+    font-size: 30px;
+    color: blue;
+    animation: fadedown 1s ease-out;
+  }
+  img{
+    width: 400px;
+    height: 200px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.5s forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadedown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cart {
+  margin-top: 150px;
+  width: 100%;
+
+  .items {
+    @include m.flex-center;
+    gap: 30px;
+
+    li {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      width: 220px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.2s ease;
+      padding-top: 30px;
+      padding-bottom: 15px;
+      @include m.card;    
+      }
+
+      img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+
+          button {
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 6px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+
+            &:hover {
+              background: #f2f2f2;
+            }
+          }
+
+          span {
+            min-width: 20px;
+            text-align: center;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  /* ✅ 이 위치로 옮기세요! */
+  .res {
+    text-align: center;
+    margin: 40px auto;
+    font-size: 18px;
+
+    div {
+      margin-bottom: 8px;
+    }
+
+    button {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+  }
+
+
