@@ -39,8 +39,15 @@ const VideoSlider: React.FC<Props> = ({
         autoPlay
         muted
         loop
-        playsInline // 모바일로 넘어가면 전체화면으로 강제변환되는데 페이지안에서 플레이되게 해주는 명령
-      />
+        playsInline
+        preload="auto"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          backgroundColor: "black",
+          display: "block",
+        }}/>
       <div className={styles.overaly} key={index}>
         <h2 className={styles.title}>{kkk.title}</h2>
         <p className={styles.subtitle}>{kkk.subtitle}</p>

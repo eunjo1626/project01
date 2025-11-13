@@ -4,22 +4,22 @@ import styles from "./Home.module.scss";
 const Home = () => {
   let slidess = [
     {
-      src: "/mov/spring.mp4",
+      src: import.meta.env.BASE_URL +"mov/spring.mp4",
       title: "Spring",
    
     },
     {
-      src: "/mov/summer.mp4",
+      src: import.meta.env.BASE_URL +"mov/summer.mp4",
       title: "Summer",
       
     },
     {
-      src: "/mov/autumn.mp4",
+      src: import.meta.env.BASE_URL +"mov/autumn.mp4",
       title: "Autumn",
      
     },
     {
-      src: "/mov/winter.mp4",
+      src: import.meta.env.BASE_URL + "mov/winter.mp4",
       title: "Winter",
      
     }

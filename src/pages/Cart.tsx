@@ -15,7 +15,7 @@ const Cart: React.FC = () => {
             <div className={styles.emptyCart}>
                 <h1 >장바구니</h1>
                 <h3 >선택된 상품이 없습니다</h3>
-                <img src='/imgs/cart.jpg' alt='cart'/>
+                <img src='imgs/cart.jpg' alt='cart'/>
             </div>
         );
     }
