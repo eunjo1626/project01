@@ -9,7 +9,7 @@ const Weather = () => {
   const [time, setTime] = useState<string>("");
 
   const API_KEY = "89d6c114ec7bbbfd4be0ebc38e323833";
-  const KAKAO_KEY = "afb63d8e7376ee4e9d81fe94b2f2d3e0";
+  const KAKAO_KEY = "ca423af37c9fa74dd71cfff0c76f9c36";
 
   // 시간 표시
   useEffect(() => {
