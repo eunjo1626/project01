@@ -31,61 +31,71 @@ const Weather = () => {
       return () => clearInterval(timer)
   },[]) // 날짜 시간 구하기
 
-    useEffect( () =>{
-        navigator.geolocation.getCurrentPosition(
-          async pos =>{
-            const { latitude, longitude } = pos.coords
-            console.log(latitude)
-            try{
+    useEffect(() => {
+  navigator.geolocation.getCurrentPosition(
+    async pos => {
+      const { latitude, longitude } = pos.coords;
 
-              // 날씨 가져오기
-                const { data } = await axios.get<WeatherAPI>(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=kr`)
-                // res = axios.get(http:ab.co.kr) ; data = res.data  ==> { data } = axios.get(http:ab.co.kr)
-                const reData:WeatherData = {
-                  city : data.name,
-                  temp : data.main.temp,
-                  icon : data.weather[0].icon,
-                  desc : data.weather[0].description
-                }
-                setWeather(reData)
-            }catch{
-              setError("날씨정보를 불러오지 못했습니다")
-            }
+      // 날씨
+      try {
+        const { data } = await axios.get<WeatherAPI>(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=kr`
+        );
 
+        const reData: WeatherData = {
+          city: data.name,
+          temp: data.main.temp,
+          icon: data.weather[0].icon,
+          desc: data.weather[0].description
+        };
 
-              // 카카오맵 가져오기
-              const script = document.createElement("script")
-              script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false`
-              script.onload = () =>{
-                window.kakao.maps.load( () =>{
-                    const mapContainer = document.getElementById('map') as HTMLElement
-                    const mapOption = { 
-                     center: new window.kakao.maps.LatLng(latitude,longitude), // 지도의 중심좌표
-                     level: 3 // 지도의 확대 레벨
-                    }
-                    const map = new window.kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        setWeather(reData);
+      } catch {
+        setError("날씨정보를 불러오지 못했습니다");
+      }
 
-                    // 마커가 표시될 위치입니다 
-                    const markerPosition  = new window.kakao.maps.LatLng(latitude,longitude ); 
+      // 카카오맵 스크립트 로드
+      const mapInit = () => {
+        window.kakao.maps.load(() => {
+          const mapContainer = document.getElementById('map') as HTMLElement;
+          const mapOption = {
+            center: new window.kakao.maps.LatLng(latitude, longitude),
+            level: 3
+          };
 
-                    // 마커를 생성합니다
-                    const marker = new window.kakao.maps.Marker({
-                        position: markerPosition
-                    });
+          const map = new window.kakao.maps.Map(mapContainer, mapOption);
 
-                    // 마커가 지도 위에 표시되도록 설정합니다
-                    marker.setMap(map);
+          const marker = new window.kakao.maps.Marker({
+            position: new window.kakao.maps.LatLng(latitude, longitude)
+          });
 
-                }) // kakao load end
-              } // script onload end
-              document.body.appendChild(script)
-          },
-          err =>{
-              console.log(err)
-              setError("위치정보를 가져올수 없습니다")
-          } // pos end
-        )
-    }, []) // useEffect end
+          marker.setMap(map);
+        });
+      };
+
+      if (window.kakao && window.kakao.maps) {
+        mapInit(); // 이미 로드됨
+      } else {
+        const script = document.createElement("script");
+        script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KAKAO_KEY}&autoload=false&libraries=services`;
+
+        script.onload = () => mapInit();
+
+        // 중복 스크립트 방지
+        if (!document.querySelector(`script[src*="kakao"]`)) {
+          document.body.appendChild(script);
+        } else {
+          mapInit();
+        }
+      }
+    },
+    err => {
+      console.log(err);
+      setError("위치정보를 가져올수 없습니다");
+    }
+  );
+}, []);
+
 
     if (error) return <p className={styles.error}>{error}</p>
     if(!weather) return null
