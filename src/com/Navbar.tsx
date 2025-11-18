@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.scss";
+import logo from "../assets/imgs/logo2.png";
 
 const Navbar = () => {
   let menus = [
@@ -11,7 +12,7 @@ const Navbar = () => {
   ];
   return (
     <header className={styles.navbar}>
-      <div className={styles.logo}></div>
+      <div className={styles.logo}><img src={logo} alt="logo" /></div>
       <nav>
         <ul className={styles.menuList}>
           {menus.map((item) => (

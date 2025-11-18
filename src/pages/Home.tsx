@@ -1,25 +1,30 @@
 import VideoSlider from "../com/VideoSlider";
 import styles from "./Home.module.scss";
+import spring from "../assets/mov/spring.mp4";
+import summer from "../assets/mov/summer.mp4";
+import autumn from "../assets/mov/autumn.mp4";
+import winter from "../assets/mov/winter.mp4";
+
 
 const Home = () => {
   let slidess = [
     {
-      src: import.meta.env.BASE_URL +"mov/spring.mp4",
+      src: spring,
       title: "Spring",
    
     },
     {
-      src: import.meta.env.BASE_URL +"mov/summer.mp4",
+      src: summer,
       title: "Summer",
       
     },
     {
-      src: import.meta.env.BASE_URL +"mov/autumn.mp4",
+      src: autumn,
       title: "Autumn",
      
     },
     {
-      src: import.meta.env.BASE_URL + "mov/winter.mp4",
+      src: winter,
       title: "Winter",
      
     }
