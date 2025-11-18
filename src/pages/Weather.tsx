@@ -153,6 +153,7 @@ const Weather = () => {
 
         <div className={styles.circle}></div>
       </div>
+      
 
       <div id="map" className={styles.map}></div>
     </div>
